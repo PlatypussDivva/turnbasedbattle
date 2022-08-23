@@ -45,14 +45,14 @@
   text-align: center;
 }
 
-.getImages {
+.gameImages {
   display: flex;
   justify-content: space-between;
   padding: 25px;
   box-sizing: border-box;
 }
 
-.characters .getImages {
+.characters .gameImages img {
   max-height: 25vh;
   min-height: 150px;
 }
