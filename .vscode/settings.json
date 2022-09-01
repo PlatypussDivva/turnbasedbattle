@@ -1,5 +1,0 @@
-{
-    "prettier.configPath": "./.prettierrc",
-    "editor.formatOnSave": true,
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-}
