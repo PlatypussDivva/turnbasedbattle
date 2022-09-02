@@ -1,15 +1,13 @@
 {
   "files": {
     "main.css": "/turnbasedbattle/static/css/main.e1a6b196.css",
-    "main.js": "/turnbasedbattle/static/js/main.8bbf098c.js",
-    "static/js/787.048fed21.chunk.js": "/turnbasedbattle/static/js/787.048fed21.chunk.js",
+    "main.js": "/turnbasedbattle/static/js/main.9e168538.js",
     "index.html": "/turnbasedbattle/index.html",
     "main.e1a6b196.css.map": "/turnbasedbattle/static/css/main.e1a6b196.css.map",
-    "main.8bbf098c.js.map": "/turnbasedbattle/static/js/main.8bbf098c.js.map",
-    "787.048fed21.chunk.js.map": "/turnbasedbattle/static/js/787.048fed21.chunk.js.map"
+    "main.9e168538.js.map": "/turnbasedbattle/static/js/main.9e168538.js.map"
   },
   "entrypoints": [
     "static/css/main.e1a6b196.css",
-    "static/js/main.8bbf098c.js"
+    "static/js/main.9e168538.js"
   ]
 }
