@@ -42,6 +42,7 @@ export const Battle = ({ onGameEnd }) => {
       <div className={styles.opponent}>
         <div className={styles.summary}>
           <PlayerSummary
+            main={false}
             health={opponentHealth}
             name={opponentStats.name}
             level={opponentStats.level}
@@ -77,7 +78,7 @@ export const Battle = ({ onGameEnd }) => {
       <div className={styles.user}>
         <div className={styles.summary}>
           <PlayerSummary
-            main
+            main={true}
             health={playerHealth}
             name={playerStats.name}
             level={playerStats.level}
