@@ -5,13 +5,12 @@ const gold = "#FFD700";
 const silver = "#C0C0C0";
 
 export const PlayerSummary = ({
-  main = false,
+  main,
   name,
   level,
   health,
   maxHealth,
-}) => {
-  return (
+}) => (
     <div
       style={{ backgroundColor: main ? gold : silver }}
       className={styles.main}
@@ -26,4 +25,3 @@ export const PlayerSummary = ({
       </div>
     </div>
   );
-};

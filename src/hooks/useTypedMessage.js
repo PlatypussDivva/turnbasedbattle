@@ -1,4 +1,4 @@
-import { wait } from "@testing-library/user-event/dist/utils";
+import { wait } from "shared";
 import { useEffect, useState } from "react";
 
 export const useTypedMessage = message => {

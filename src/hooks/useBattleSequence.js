@@ -65,6 +65,7 @@ export const useBattleSequence = sequence => {
             setTurn(turn === 0 ? 1 : 0);
             setInSequence(false);
           })();
+
           break;
         }
 
@@ -98,7 +99,7 @@ export const useBattleSequence = sequence => {
             turn === 0
               ? setOpponentHealth(h => (h - damage > 0 ? h - damage : 0))
               : setPlayerHealth(h => (h - damage > 0 ? h - damage : 0));
-            await wait(2000);
+            await wait(2500);
 
             setAnnouncerMessage(`Now it's ${defender.name}'s turn`);
             await wait(1500);
@@ -106,6 +107,7 @@ export const useBattleSequence = sequence => {
             setTurn(turn === 0 ? 1 : 0);
             setInSequence(false);
           })();
+
           break;
         }
 
@@ -144,7 +146,7 @@ export const useBattleSequence = sequence => {
             setAnnouncerMessage(`Now it's ${defender.name}'s turn!`);
             await wait(1500);
 
-            setTurn(turn === 0 ? 1 : 1);
+            setTurn(turn === 0 ? 1 : 0);
             setInSequence(false);
           })();
 

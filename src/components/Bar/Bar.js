@@ -1,7 +1,6 @@
 import styles from "./styles.module.css";
 
-export const Bar = ({ label, value, maxValue }) => {
-  return (
+export const Bar = ({ label, value, maxValue }) => (
     <div className={styles.main}>
       <div className={styles.label}>{label}</div>
 
@@ -13,4 +12,4 @@ export const Bar = ({ label, value, maxValue }) => {
       </div>
     </div>
   );
-};
+

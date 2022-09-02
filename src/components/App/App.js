@@ -1,12 +1,18 @@
 import { Battle } from "components/Battle";
 import { EndMenu } from "components/EndMenu";
 import { StartMenu } from "components/StartMenu";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./styles.module.css";
 
 export const App = () => {
   const [mode, setMode] = useState("start");
   const [winner, setWinner] = useState();
+
+  useEffect(() => {
+    if (mode === "battle") {
+      setWinner(undefined);
+    }
+  }, [mode]);
 
   return (
     <div className={styles.main}>
@@ -23,14 +29,11 @@ export const App = () => {
         />
       )}
 
-      {mode === "gameOver" && (
+      {mode === "gameOver" && !!winner && (
         <EndMenu
           winner={winner}
-          onStartClick={() => {
-            setWinner(undefined);
-            setMode("battle");
-          }}
-        />
+          onStartClick={() =>
+            setMode("battle")} />
       )}
     </div>
   );

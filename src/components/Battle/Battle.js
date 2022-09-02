@@ -93,14 +93,15 @@ export const Battle = ({ onGameEnd }) => {
               }
             />
           </div>
-
+          {!inSequence && turn === 0 && (
           <div className={styles.hudChild}>
             <BattleMenu
-              onAttack={() => setSequence({ turn, mode: "attack" })}
-              onMagic={() => setSequence({ turn, mode: "magic" })}
-              onHeal={() => setSequence({ turn, mode: "heal" })}
+              onAttack={() => setSequence({ mode: "attack", turn })}
+              onMagic={() => setSequence({ mode: "magic" , turn })}
+              onHeal={() => setSequence({ mode: "heal" , turn })}
             />
           </div>
+          )}
         </div>
       </div>
     </>
