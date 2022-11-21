@@ -2,7 +2,7 @@ export const playerStats = {
   level: 1,
   maxHealth: 17,
   name: "Mus",
-  img: "../turnbasedbattle/assets/Mus.png",
+  img: "../assets/Mus.png",
 
   magic: 6,
   attack: 5,
@@ -17,7 +17,7 @@ export const opponentStats = {
   level: 1,
   name: "Dengue",
   maxHealth: 16,
-  img: "../turnbasedbattle/assets/Dengue.png",
+  img: "../assets/Dengue.png",
 
   magic: 5,
   attack: 6,
