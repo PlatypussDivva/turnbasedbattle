@@ -46,6 +46,11 @@ export const Battle = ({ onGameEnd }) => {
             name={opponentStats.name}
             level={opponentStats.level}
             maxHealth={opponentStats.maxHealth}
+            accuracy={opponentStats.accuracy}
+            attack={opponentStats.attack}
+            agility={opponentStats.agility}
+            defense={opponentStats.defense}
+            speed={opponentStats.speed}
           />
         </div>
       </div>
@@ -82,6 +87,11 @@ export const Battle = ({ onGameEnd }) => {
             name={playerStats.name}
             level={playerStats.level}
             maxHealth={playerStats.maxHealth}
+            accuracy={playerStats.accuracy}
+            attack={playerStats.attack}
+            agility={playerStats.agility}
+            defense={playerStats.defense}
+            speed={playerStats.speed}
           />
         </div>
 
