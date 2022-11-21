@@ -1,8 +1,8 @@
 {
-  "name": "turnbasedbattle",
+  "name": "platypussbattler",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Aodj05.github.io/turnbasedbattle",
+  "homepage": "https://turnbasedbattle-7vkj9lx8l-platypussdivva.vercel.app/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.3.0",
