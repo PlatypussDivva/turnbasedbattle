@@ -4,6 +4,10 @@ export const useAIOpponent = turn => {
   const [aiChoice, setAIChoice] = useState("");
 
   useEffect(() => {
+    if (turn === 0) {
+      const options = ["attack", "magic", "heal"];
+      setAIChoice(options[Math.floor(Math.random() * options.length)]);
+    }
     if (turn === 1) {
       const options = ["attack", "magic", "heal"];
       setAIChoice(options[Math.floor(Math.random() * options.length)]);

@@ -23,7 +23,7 @@ export const Battle = ({ onGameEnd }) => {
   const aiChoice = useAIOpponent(turn);
 
   useEffect(() => {
-    if (aiChoice && turn === 1 && !inSequence) {
+    if (aiChoice && !inSequence) {
       setSequence({ turn, mode: aiChoice });
     }
   }, [turn, aiChoice, inSequence]);
@@ -31,7 +31,7 @@ export const Battle = ({ onGameEnd }) => {
   useEffect(() => {
     if (playerHealth === 0 || opponentHealth === 0) {
       (async () => {
-        await wait(1000);
+        await wait(500);
         onGameEnd(playerHealth === 0 ? opponentStats : playerStats);
       })();
     }
@@ -39,23 +39,7 @@ export const Battle = ({ onGameEnd }) => {
 
   return (
     <>
-      <div className={styles.opponent}>
-        <div className={styles.summary}>
-          <PlayerSummary
-            health={opponentHealth}
-            name={opponentStats.name}
-            level={opponentStats.level}
-            maxHealth={opponentStats.maxHealth}
-            accuracy={opponentStats.accuracy}
-            attack={opponentStats.attack}
-            agility={opponentStats.agility}
-            defense={opponentStats.defense}
-            speed={opponentStats.speed}
-          />
-        </div>
-      </div>
-
-      <div className={styles.characters}>
+    <div className={styles.characters}>
         <div className={styles.gameHeader}>
           {playerStats.name} vs {opponentStats.name}
         </div>
@@ -67,19 +51,7 @@ export const Battle = ({ onGameEnd }) => {
               src={playerStats.img}
               className={styles[playerAnimation]}
             />
-          </div>
-
-          <div className={styles.opponentSprite}>
-            <img
-              alt={opponentStats.name}
-              src={opponentStats.img}
-              className={styles[opponentAnimation]}
-            />
-          </div>
-        </div>
-      </div>
-
-      <div className={styles.user}>
+            <div className={styles.user}>
         <div className={styles.summary}>
           <PlayerSummary
             main
@@ -94,8 +66,35 @@ export const Battle = ({ onGameEnd }) => {
             speed={playerStats.speed}
           />
         </div>
+      </div>
+          </div>
 
-        <div className={styles.hud}>
+          <div className={styles.opponentSprite}>
+            <img
+              alt={opponentStats.name}
+              src={opponentStats.img}
+              className={styles[opponentAnimation]}
+            />
+            <div className={styles.opponent}>
+        <div className={styles.summary}>
+          <PlayerSummary
+            health={opponentHealth}
+            name={opponentStats.name}
+            level={opponentStats.level}
+            maxHealth={opponentStats.maxHealth}
+            accuracy={opponentStats.accuracy}
+            attack={opponentStats.attack}
+            agility={opponentStats.agility}
+            defense={opponentStats.defense}
+            speed={opponentStats.speed}
+          />
+        </div>
+      </div>
+          </div>
+        </div>
+      </div>
+
+      <div className={styles.hud}>
           <div className={styles.hudChild}>
             <BattleAnnouncer
               message={
@@ -113,7 +112,9 @@ export const Battle = ({ onGameEnd }) => {
           </div>
           )}
         </div>
-      </div>
+
+
+      
     </>
   );
 };

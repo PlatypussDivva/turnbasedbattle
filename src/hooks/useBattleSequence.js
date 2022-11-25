@@ -33,22 +33,22 @@ export const useBattleSequence = sequence => {
           (async () => {
             setInSequence(true);
             setAnnouncerMessage(`${attacker.name} has chosen to attack!`);
-            await wait(1000);
+            await wait(500);
 
             turn === 0
               ? setPlayerAnimation("attack")
               : setOpponentAnimation("attack");
-            await wait(100);
+            await wait(50);
 
             turn === 0
               ? setPlayerAnimation("static")
               : setOpponentAnimation("static");
-            await wait(500);
+            await wait(250);
 
             turn === 0
               ? setOpponentAnimation("damage")
               : setPlayerAnimation("damage");
-            await wait(750);
+            await wait(375);
 
             turn === 0
               ? setOpponentAnimation("static")
@@ -57,10 +57,10 @@ export const useBattleSequence = sequence => {
             turn === 0
               ? setOpponentHealth(h => (h - damage > 0 ? h - damage : 0))
               : setPlayerHealth(h => (h - damage > 0 ? h - damage : 0));
-            await wait(2000);
+            await wait(1000);
 
             setAnnouncerMessage(`Now it's ${defender.name}'s turn`);
-            await wait(1500);
+            await wait(750);
 
             setTurn(turn === 0 ? 1 : 0);
             setInSequence(false);
@@ -75,22 +75,22 @@ export const useBattleSequence = sequence => {
           (async () => {
             setInSequence(true);
             setAnnouncerMessage(`${attacker.name} has cast a spell!`);
-            await wait(1000);
+            await wait(500);
 
             turn === 0
               ? setPlayerAnimation("magic")
               : setOpponentAnimation("magic");
-            await wait(100);
+            await wait(50);
 
             turn === 0
               ? setPlayerAnimation("static")
               : setOpponentAnimation("static");
-            await wait(500);
+            await wait(50);
 
             turn === 0
               ? setOpponentAnimation("damage")
               : setPlayerAnimation("damage");
-            await wait(750);
+            await wait(375);
 
             turn === 0
               ? setOpponentAnimation("static")
@@ -99,10 +99,10 @@ export const useBattleSequence = sequence => {
             turn === 0
               ? setOpponentHealth(h => (h - damage > 0 ? h - damage : 0))
               : setPlayerHealth(h => (h - damage > 0 ? h - damage : 0));
-            await wait(2500);
+            await wait(1250);
 
             setAnnouncerMessage(`Now it's ${defender.name}'s turn`);
-            await wait(1500);
+            await wait(750);
 
             setTurn(turn === 0 ? 1 : 0);
             setInSequence(false);
@@ -117,17 +117,17 @@ export const useBattleSequence = sequence => {
           (async () => {
             setInSequence(true);
             setAnnouncerMessage(`${attacker.name} healed itself!`);
-            await wait(1000);
+            await wait(500);
 
             turn === 0
               ? setPlayerAnimation("magic")
               : setOpponentAnimation("magic");
-            await wait(1000);
+            await wait(500);
 
             turn === 0
               ? setPlayerAnimation("static")
               : setOpponentAnimation("static");
-            await wait(500);
+            await wait(250);
 
             setAnnouncerMessage(`${attacker.name} has recovered some HP!`);
             turn === 0
@@ -141,10 +141,10 @@ export const useBattleSequence = sequence => {
                     ? h + recovered
                     : attacker.maxHealth,
                 ); //Not wanting health to recover over the max
-            await wait(2500);
+            await wait(1250);
 
             setAnnouncerMessage(`Now it's ${defender.name}'s turn!`);
-            await wait(1500);
+            await wait(750);
 
             setTurn(turn === 0 ? 1 : 0);
             setInSequence(false);
